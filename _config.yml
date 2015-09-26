@@ -1,0 +1,21 @@
+# Jekyll Configuration
+
+name:        ByeBye-8
+baseurl:	 /
+
+# Dependencies
+markdown:    redcarpet
+
+# Permalinks
+permalink:   pretty
+
+# Custom Vars
+#source:      /
+destination: _deploy
+exclude:     [".gitignore", ".editorconfig", "README.md", "config.rb", "scss", "bower.json", ".bowerrc"]
+
+# Sass
+sass:
+  sass_dir: _scss
+  style: :compressed
+  line_numbers: false
