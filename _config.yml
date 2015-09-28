@@ -1,7 +1,7 @@
 # Jekyll Configuration
 
 name:        ByeBye-8
-baseurl:	 /
+baseurl:	 #/
 
 # Dependencies
 markdown:    redcarpet
