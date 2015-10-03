@@ -304,3 +304,17 @@ background: linear-gradient(to bottom, #f7f6e3 0%,#c6b27b 30%,#e8d5a2 100%); /* 
 		color:white;
 	}
 }
+
+//Media queries
+@media (max-width: 600px) {
+  .modal{
+		width:90%;
+		margin:0;
+		left:5%;
+	}
+	h1{ font-size:20px;}
+	h2{
+		font-size:16px;
+	}
+
+}
