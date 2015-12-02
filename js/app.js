@@ -60,9 +60,9 @@ jQuery(function(){
         	'transform: rotate('+(rotateAngle - 2)+'deg);'+
         	'}'+
         '}';*/
-        style = style + 'animation:none; -webkit-animation:none; transform: rotate('+(rotateAngle)+'deg);';
+        style = style + 'animation-name:none; -webkit-animation-name:none; transform: rotate('+(rotateAngle)+'deg);';
         //$('#bb8-orientation').html(style);
-        $('.droid').css({'transition':'all .2s ease-in-out','animation':'none', '-webkit-animation':'none','transform':'rotate('+(rotateAngle)+'deg)'});
+        $('.droid').css({'transition':'all .2s ease-in-out','animation-name':'none', '-webkit-animation-name':'none','transform':'rotate('+(rotateAngle)+'deg)'});
         console.log(style);
     });
 //  }
