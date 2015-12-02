@@ -45,7 +45,7 @@ jQuery(function(){
         console.log(o.gamma);
         if (o.gamma >0){
           //style = style + '.droid-body{ animation-duration: '+ rotateSpeed+'s; -webkit-animation-duration: '+ rotateSpeed+'s;}';
-          $('.droid-body').css({'animation-duration':(45/o.gamma)+'s','-webkit-animation-duration':(45/o.gamma)+'s'});
+          $('.droid-body').css({'transition':'all .5s ease-in-out','animation-duration':(45/o.gamma)+'s','-webkit-animation-duration':(45/o.gamma)+'s'});
         } else {
           $('.droid-body').css({'animation-duration':(-45/o.gamma)+'s','-webkit-animation-duration':(-45/o.gamma)+'s'});
         }
@@ -62,7 +62,7 @@ jQuery(function(){
         '}';*/
         style = style + 'animation-name:none; -webkit-animation-name:none; transform: rotate('+(rotateAngle)+'deg);';
         //$('#bb8-orientation').html(style);
-        $('.droid').css({'transition':'all .2s ease-in-out','animation-name':'none', '-webkit-animation-name':'none','transform':'rotate('+(rotateAngle)+'deg)'});
+        $('.droid').css({'transition':'all .5s ease-in-out','animation-name':'none', '-webkit-animation-name':'none','transform':'rotate('+(rotateAngle)+'deg)'});
         console.log(style);
     });
 //  }
