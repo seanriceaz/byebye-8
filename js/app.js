@@ -22,7 +22,7 @@ jQuery(function(){
 
   });
   if($('#bb8-style').length < 1 ){
-      $('body').prepend('<style type="text/css" id="#bb8-style"></style>');
+      $('body').prepend('<style type="text/css" id="bb8-style"></style>');
   }
   if(getParameterByName('color'))
   {
@@ -32,35 +32,40 @@ jQuery(function(){
   }
   //Do Gyro stuff if the browser has it!
   if($('#bb8-orientation').length < 1 ){
-      $('body').prepend('<style type="text/css" id="#bb8-orientation"></style>');
+      $('body').prepend('<style type="text/css" id="bb8-orientation"></style>');
   }
-  if(gyro.hasFeature('devicemotion')){
+  //if(gyro.hasFeature('devicemotion')){
     gyro.startTracking(function(o) {
         // o.x, o.y, o.z for accelerometer
         // o.alpha, o.beta, o.gamma for gyro
         var reactivity = 1;
         var rotateSpeed = o.gamma * reactivity;
-        var rotateAngle = o.gamma;
+        var rotateAngle = o.gamma *-1;
         var style = "";
         console.log(o.gamma);
         if (o.gamma >0){
-          style += '.droid-body{ animation-duration: '+ rotateSpeed+'s }';
+          //style = style + '.droid-body{ animation-duration: '+ rotateSpeed+'s; -webkit-animation-duration: '+ rotateSpeed+'s;}';
+          //$('.droid-body').css({'transition':'all .5s ease-in-out','animation-duration':(45/o.gamma)+'s','-webkit-animation-duration':(45/o.gamma)+'s'});
+        } else {
+          //$('.droid-body').css({'animation-duration':(-45/o.gamma)+'s','-webkit-animation-duration':(-45/o.gamma)+'s'});
         }
-        style += '@keyframes rockdroid {'+
+        /*style = style + '@keyframes rockdroid {'+
           '0% {'+
-            'transform: rotate('+rotateAngle - 2+'deg);'+
+            'transform: rotate('+(rotateAngle - 2)+'deg);'+
           '}'+
           '50% {'+
-        		'transform: rotate('+rotateAngle+2+'deg);'+
+        		'transform: rotate('+(rotateAngle+2)+'deg);'+
           '}'+
         	'100%{'+
-        	'transform: rotate('+rotateAngle - 2+'deg);'+
+        	'transform: rotate('+(rotateAngle - 2)+'deg);'+
         	'}'+
-        '}';
-        $('#bb8-orientation').html(style);
+        '}';*/
+        style = style + 'animation-name:none; -webkit-animation-name:none; transform: rotate('+(rotateAngle)+'deg);';
+        //$('#bb8-orientation').html(style);
+        $('.droid').css({'transition':'all .5s ease-in-out','animation-name':'none', '-webkit-animation-name':'none','transform':'rotate('+(rotateAngle)+'deg)'});
         console.log(style);
     });
-  }
+//  }
 
 });
 function getParameterByName(name) {
