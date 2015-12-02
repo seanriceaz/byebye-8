@@ -44,7 +44,7 @@ jQuery(function(){
         var style = "";
         console.log(o.gamma);
         if (o.gamma >0){
-          style += '.droid-body{ animation-duration: '+ rotateSpeed+'s; -webkit-animation-duration: '+ rotateSpeed+'s;}';
+          style = style + '.droid-body{ animation-duration: '+ rotateSpeed+'s; -webkit-animation-duration: '+ rotateSpeed+'s;}';
         }
         style = style + '@keyframes rockdroid {'+
           '0% {'+
