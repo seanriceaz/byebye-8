@@ -44,7 +44,10 @@ jQuery(function(){
         var style = "";
         console.log(o.gamma);
         if (o.gamma >0){
-          style = style + '.droid-body{ animation-duration: '+ rotateSpeed+'s; -webkit-animation-duration: '+ rotateSpeed+'s;}';
+          //style = style + '.droid-body{ animation-duration: '+ rotateSpeed+'s; -webkit-animation-duration: '+ rotateSpeed+'s;}';
+          $('.droid-body').css({'animation-duration':(45/o.gamma)+'s','-webkit-animation-duration':(45/o.gamma)+'s'});
+        } else {
+          $('.droid-body').css({'animation-duration':(-45/o.gamma)+'s','-webkit-animation-duration':(-45/o.gamma)+'s'});
         }
         /*style = style + '@keyframes rockdroid {'+
           '0% {'+
@@ -58,7 +61,8 @@ jQuery(function(){
         	'}'+
         '}';*/
         style = style + 'animation:none; -webkit-animation:none; transform: rotate('+(rotateAngle)+'deg);';
-        $('#bb8-orientation').html(style);
+        //$('#bb8-orientation').html(style);
+        $('.droid').css({'animation':'none', '-webkit-animation':'none','transform':'rotate('+(rotateAngle)+'deg);'})
         console.log(style);
     });
 //  }
