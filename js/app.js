@@ -21,13 +21,47 @@ jQuery(function(){
        }, 1000);
 
   });
+  if($('#bb8-style').length < 1 ){
+      $('body').prepend('<style type="text/css" id="#bb8-style"></style>');
+  }
   if(getParameterByName('color'))
   {
-    $('body').prepend('<style type="text/css">'+
-    'body .droid-accent-color{fill: #'+getParameterByName('color')+'; }'+
+    $('#bb8-style').append('body .droid-accent-color{fill: #'+getParameterByName('color')+'; }'+
     '.droid-accent-bordered{fill: #'+getParameterByName('color')+'; }'+
-    '</style>');
+    );
   }
+  //Do Gyro stuff if the browser has it!
+  if($('#bb8-orientation').length < 1 ){
+      $('body').prepend('<style type="text/css" id="#bb8-orientation"></style>');
+  }
+  if(gyro.hasFeature('devicemotion')){
+    gyro.startTracking(function(o) {
+        // o.x, o.y, o.z for accelerometer
+        // o.alpha, o.beta, o.gamma for gyro
+        var reactivity = 1;
+        var rotateSpeed = o.gamma * reactivity;
+        var rotateAngle = o.gamma;
+        var style = "";
+        console.log(o.gamma);
+        if (o.gamma >0){
+          style += '.droid-body{ animation-duration: '+ rotateSpeed+'s }';
+        }
+        style += '@keyframes rockdroid {'+
+          '0% {'+
+            'transform: rotate('+rotateAngle - 2+'deg);'+
+          '}'+
+          '50% {'+
+        		'transform: rotate('+rotateAngle+2+'deg);'+
+          '}'+
+        	'100%{'+
+        	'transform: rotate('+rotateAngle - 2+'deg);'+
+        	'}'+
+        '}';
+        $('#bb8-orientation').html(style);
+        console.log(style);
+    });
+  }
+
 });
 function getParameterByName(name) {
   name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
