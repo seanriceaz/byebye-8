@@ -62,7 +62,7 @@ jQuery(function(){
         '}';*/
         style = style + 'animation:none; -webkit-animation:none; transform: rotate('+(rotateAngle)+'deg);';
         //$('#bb8-orientation').html(style);
-        $('.droid').css({'animation':'none', '-webkit-animation':'none','transform':'rotate('+(rotateAngle)+'deg)'});
+        $('.droid').css({'transition':'.2s ease-in-out','animation':'none', '-webkit-animation':'none','transform':'rotate('+(rotateAngle)+'deg)'});
         console.log(style);
     });
 //  }
