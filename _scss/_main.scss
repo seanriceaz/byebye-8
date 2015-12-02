@@ -112,6 +112,7 @@ h1{
 }
 
 .droid{
+	transition:all .5s linear;
 	position:fixed;
 	bottom:30%;
 	left:50%;
@@ -122,6 +123,7 @@ h1{
 }
 
 .droid-head{
+	transition:all .5s linear;
 	width:130px;
 	height:75px;
 	position:absolute;
@@ -149,7 +151,8 @@ h1{
 .droid-body
 {
 	//animation stuff
-  animation-name:             rotate;
+	transition:all .5s linear;
+	animation-name:             rotate;
   animation-duration:         1s;
   animation-iteration-count:  infinite;
   animation-timing-function: linear;
