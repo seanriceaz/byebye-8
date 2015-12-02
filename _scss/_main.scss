@@ -169,7 +169,8 @@ h1{
 	margin-bottom:-100px;
 	svg{
 		//animation stuff
-	    animation-name:             shiftbody;
+			transition:all .5s linear;
+			animation-name:             shiftbody;
 	    animation-duration:         10s;
 	    animation-iteration-count:  infinite;
 	    animation-timing-function: ease-in-out;
