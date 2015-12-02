@@ -46,15 +46,15 @@ jQuery(function(){
         if (o.gamma >0){
           style += '.droid-body{ animation-duration: '+ rotateSpeed+'s; -webkit-animation-duration: '+ rotateSpeed+'s;}';
         }
-        style += '@keyframes rockdroid {'+
+        style = style + '@keyframes rockdroid {'+
           '0% {'+
-            'transform: rotate('+rotateAngle - 2+'deg);'+
+            'transform: rotate('+(rotateAngle - 2)+'deg);'+
           '}'+
           '50% {'+
-        		'transform: rotate('+rotateAngle+2+'deg);'+
+        		'transform: rotate('+(rotateAngle+2)+'deg);'+
           '}'+
         	'100%{'+
-        	'transform: rotate('+rotateAngle - 2+'deg);'+
+        	'transform: rotate('+(rotateAngle - 2)+'deg);'+
         	'}'+
         '}';
         $('#bb8-orientation').html(style);
