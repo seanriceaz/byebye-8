@@ -45,9 +45,9 @@ jQuery(function(){
         console.log(o.gamma);
         if (o.gamma >0){
           //style = style + '.droid-body{ animation-duration: '+ rotateSpeed+'s; -webkit-animation-duration: '+ rotateSpeed+'s;}';
-          $('.droid-body').css({'transition':'all .5s ease-in-out','animation-duration':(45/o.gamma)+'s','-webkit-animation-duration':(45/o.gamma)+'s'});
+          //$('.droid-body').css({'transition':'all .5s ease-in-out','animation-duration':(45/o.gamma)+'s','-webkit-animation-duration':(45/o.gamma)+'s'});
         } else {
-          $('.droid-body').css({'animation-duration':(-45/o.gamma)+'s','-webkit-animation-duration':(-45/o.gamma)+'s'});
+          //$('.droid-body').css({'animation-duration':(-45/o.gamma)+'s','-webkit-animation-duration':(-45/o.gamma)+'s'});
         }
         /*style = style + '@keyframes rockdroid {'+
           '0% {'+
