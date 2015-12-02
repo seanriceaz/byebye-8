@@ -38,16 +38,20 @@ jQuery(function(){
     gyro.startTracking(function(o) {
         // o.x, o.y, o.z for accelerometer
         // o.alpha, o.beta, o.gamma for gyro
-        var reactivity = 1;
-        var rotateSpeed = o.gamma * reactivity;
+        var reactivity = 4;
+        //o.gamma is the tilt in degrees. 0 is vertical
+        var rotateSpeed = 0;
+        if (o.gamma !=0)
+         rotateSpeed = reactivity / Math.sqrt(Math.abs(o.gamma)) ; //measured in rotations per second. Default is 2
+
         var rotateAngle = o.gamma *-1;
         var style = "";
         console.log(o.gamma);
         if (o.gamma >0){
           //style = style + '.droid-body{ animation-duration: '+ rotateSpeed+'s; -webkit-animation-duration: '+ rotateSpeed+'s;}';
-          //$('.droid-body').css({'transition':'all .5s ease-in-out','animation-duration':(45/o.gamma)+'s','-webkit-animation-duration':(45/o.gamma)+'s'});
+          $('.droid-body').css({'animation-duration':(rotateSpeed)+'s','-webkit-animation-duration':(rotateSpeed)+'s','animation-direction':'reverse'});
         } else {
-          //$('.droid-body').css({'animation-duration':(-45/o.gamma)+'s','-webkit-animation-duration':(-45/o.gamma)+'s'});
+            $('.droid-body').css({'animation-duration':(rotateSpeed)+'s','-webkit-animation-duration':(rotateSpeed)+'s'});
         }
         /*style = style + '@keyframes rockdroid {'+
           '0% {'+
@@ -62,7 +66,7 @@ jQuery(function(){
         '}';*/
         style = style + 'animation-name:none; -webkit-animation-name:none; transform: rotate('+(rotateAngle)+'deg);';
         //$('#bb8-orientation').html(style);
-        $('.droid').css({'transition':'all .5s ease-in-out','animation-name':'none', '-webkit-animation-name':'none','transform':'rotate('+(rotateAngle)+'deg)'});
+        $('.droid').css({'animation-name':'none', '-webkit-animation-name':'none','transform':'rotate('+(rotateAngle)+'deg)'});
         console.log(style);
     });
 //  }
