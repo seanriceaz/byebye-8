@@ -40,13 +40,13 @@ jQuery(function(){
         // o.alpha, o.beta, o.gamma for gyro
         var reactivity = 1;
         var rotateSpeed = o.gamma * reactivity;
-        var rotateAngle = o.gamma;
+        var rotateAngle = o.gamma *-1;
         var style = "";
         console.log(o.gamma);
         if (o.gamma >0){
           style = style + '.droid-body{ animation-duration: '+ rotateSpeed+'s; -webkit-animation-duration: '+ rotateSpeed+'s;}';
         }
-        style = style + '@keyframes rockdroid {'+
+        /*style = style + '@keyframes rockdroid {'+
           '0% {'+
             'transform: rotate('+(rotateAngle - 2)+'deg);'+
           '}'+
@@ -56,7 +56,8 @@ jQuery(function(){
         	'100%{'+
         	'transform: rotate('+(rotateAngle - 2)+'deg);'+
         	'}'+
-        '}';
+        '}';*/
+        style = style + 'animation:none; -webkit-animation:none; transform: rotate('+(rotateAngle)+'deg);';
         $('#bb8-orientation').html(style);
         console.log(style);
     });
