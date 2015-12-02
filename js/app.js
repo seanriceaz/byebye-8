@@ -27,7 +27,7 @@ jQuery(function(){
   if(getParameterByName('color'))
   {
     $('#bb8-style').append('body .droid-accent-color{fill: #'+getParameterByName('color')+'; }'+
-    '.droid-accent-bordered{fill: #'+getParameterByName('color')+'; }'+
+    '.droid-accent-bordered{fill: #'+getParameterByName('color')+'; }'
     );
   }
   //Do Gyro stuff if the browser has it!
