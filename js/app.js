@@ -22,7 +22,7 @@ jQuery(function(){
 
   });
   if($('#bb8-style').length < 1 ){
-      $('body').prepend('<style type="text/css" id="#bb8-style"></style>');
+      $('body').prepend('<style type="text/css" id="bb8-style"></style>');
   }
   if(getParameterByName('color'))
   {
@@ -32,7 +32,7 @@ jQuery(function(){
   }
   //Do Gyro stuff if the browser has it!
   if($('#bb8-orientation').length < 1 ){
-      $('body').prepend('<style type="text/css" id="#bb8-orientation"></style>');
+      $('body').prepend('<style type="text/css" id="bb8-orientation"></style>');
   }
   //if(gyro.hasFeature('devicemotion')){
     gyro.startTracking(function(o) {
