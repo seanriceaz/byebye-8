@@ -34,7 +34,7 @@ jQuery(function(){
   if($('#bb8-orientation').length < 1 ){
       $('body').prepend('<style type="text/css" id="bb8-orientation"></style>');
   }
-  //if(gyro.hasFeature('devicemotion')){
+  if(gyro.hasFeature('devicemotion')){
     gyro.startTracking(function(o) {
         // o.x, o.y, o.z for accelerometer
         // o.alpha, o.beta, o.gamma for gyro
@@ -69,7 +69,7 @@ jQuery(function(){
         $('.droid').css({'animation-name':'none', '-webkit-animation-name':'none','transform':'rotate('+(rotateAngle)+'deg)'});
         console.log(style);
     });
-//  }
+  }
 
 });
 function getParameterByName(name) {
